@@ -1,44 +1,35 @@
 package employee;
 
-
-
 class Employee {
-	
-   String Name;
-   String DateOfBirth;
-   
-   
-public Employee(String name, String dateOfBirth){
-	super();
-	Name = name;
-	DateOfBirth = dateOfBirth;
-}
 
-public String getName() {
-	return Name;
-}
+	String Name;
+	String DateOfBirth;
 
-public void setName(String name) {
-	Name = name;
-}
+	public Employee(String name, String dateOfBirth) {
+		super();
+		Name = name;
+		DateOfBirth = dateOfBirth;
+	}
 
-public String getDateOfBirth() {
-	return DateOfBirth;
-}
+	public String getName() {
+		return Name;
+	}
 
-public void setDateOfBirth(String dateOfBirth) {
-	DateOfBirth = dateOfBirth;
-}
+	public void setName(String name) {
+		Name = name;
+	}
 
-@Override
-public String toString() {
-	return "Employee [Name=" + Name + ", DateOfBirth=" + DateOfBirth + "]";
-}
+	public String getDateOfBirth() {
+		return DateOfBirth;
+	}
 
+	public void setDateOfBirth(String dateOfBirth) {
+		DateOfBirth = dateOfBirth;
+	}
 
+	@Override
+	public String toString() {
+		return "Employee [Name=" + Name + ", DateOfBirth=" + DateOfBirth + "]";
+	}
 
-
-   
-   
-    
 }
