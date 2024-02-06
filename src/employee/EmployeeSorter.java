@@ -4,10 +4,12 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.Scanner;
+import java.util.logging.Logger;
 
 public class EmployeeSorter implements Comparator<Employee> {
+	private static final Logger log = Logger.getLogger(EmployeeSorter.class.getName());
 	static Scanner scanner = new Scanner(System.in);
-	static int choice ;
+	static int choice;
 
 	public static void main(String[] args) {
 
@@ -20,26 +22,23 @@ public class EmployeeSorter implements Comparator<Employee> {
 		employees.add(employee2);
 		employees.add(employee3);
 		// Getting user preference for sorting
-		 choice = scanner.nextInt();
+		choice = scanner.nextInt();
 
-		
-	
-		System.out.println("Enter 1 to sort by name, 2 to sort by date of birth:");
-		
-		
-		Collections.sort(employees,new EmployeeSorter());
-		
+		log.info("Enter 1 to sort by name, 2 to sort by date of birth:");
+
+		Collections.sort(employees, new EmployeeSorter());
+
 		// Displaying the sorted employees
-		System.out.println("Sorted Employees:");
+		log.info("Sorted Employees:");
 		for (Employee employee : employees) {
-			System.out.println(employee);
+			log.info(employee.toString());
 		}
 
 	}
 
 	@Override
 	public int compare(Employee o1, Employee o2) {
-		
+
 		if (choice == 1) {
 			// Sort by name
 			return o1.getName().compareTo(o2.getName());
@@ -47,14 +46,8 @@ public class EmployeeSorter implements Comparator<Employee> {
 			// Sort by date of birth
 			return o1.getDateOfBirth().compareTo(o2.getDateOfBirth());
 		} else {
-			System.out.println("Invalid choice. Program exiting.");
+			log.info("Invalid choice. Program exiting.");
 			return o1.getName().compareTo(o2.getName());
-			
 		}
-		
-		
 	}
-
-	
-
 }
